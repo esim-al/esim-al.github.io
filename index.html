@@ -28,14 +28,14 @@
             top: 0;
             z-index: 100;
         }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #0d6efd;
-            text-decoration: none;
+        .logo img {
+            height: 45px;
+            vertical-align: middle;
         }
-        .logo span {
+        nav a {
             color: #333;
+            text-decoration: none;
+            font-weight: 500;
         }
         .hero {
             background: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
@@ -81,7 +81,7 @@
             transform: translateY(-4px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
-        .plan-card img {
+        .plan-card .emoji {
             font-size: 3rem;
             margin-bottom: 0.5rem;
         }
@@ -128,9 +128,11 @@
 <body>
 
     <header>
-        <a href="/" class="logo">🌍 eSIM<span>.al</span></a>
+        <a href="/" class="logo">
+            <img src="logo.png" alt="eSIM.al Logo">
+        </a>
         <nav>
-            <a href="#plans" style="color:#333; text-decoration:none; font-weight:500;">Planet</a>
+            <a href="#plans">Planet</a>
         </nav>
     </header>
 
@@ -145,7 +147,7 @@
 
             <!-- Plani Europa -->
             <div class="plan-card">
-                <div>🇪🇺</div>
+                <div class="emoji">🇪🇺</div>
                 <h3>Europa</h3>
                 <div class="price">nga 4.50 €</div>
                 <div class="details">1 GB – 20 GB • 30 ditë • 39 vende</div>
@@ -154,7 +156,7 @@
 
             <!-- Plani SHBA -->
             <div class="plan-card">
-                <div>🇺🇸</div>
+                <div class="emoji">🇺🇸</div>
                 <h3>Shtetet e Bashkuara</h3>
                 <div class="price">nga 4.00 €</div>
                 <div class="details">1 GB – 20 GB • 30 ditë</div>
@@ -163,7 +165,7 @@
 
             <!-- Plani Ballkan -->
             <div class="plan-card">
-                <div>🌍</div>
+                <div class="emoji">🌍</div>
                 <h3>Ballkani</h3>
                 <div class="price">nga 3.00 €</div>
                 <div class="details">Shqipëri, Kosovë, Maqedoni e Veriut, Mal të Zi...</div>
@@ -172,7 +174,7 @@
 
             <!-- Plani Turqi -->
             <div class="plan-card">
-                <div>🇹🇷</div>
+                <div class="emoji">🇹🇷</div>
                 <h3>Turqia</h3>
                 <div class="price">nga 3.50 €</div>
                 <div class="details">1 GB – 10 GB • 30 ditë</div>
@@ -181,7 +183,7 @@
 
             <!-- Plani Azi -->
             <div class="plan-card">
-                <div>🌏</div>
+                <div class="emoji">🌏</div>
                 <h3>Azia</h3>
                 <div class="price">nga 5.00 €</div>
                 <div class="details">Japoni, Tajlandë, Indonezi, Vietnam...</div>
@@ -190,7 +192,7 @@
 
             <!-- Plani Global -->
             <div class="plan-card">
-                <div>🌐</div>
+                <div class="emoji">🌐</div>
                 <h3>Global</h3>
                 <div class="price">nga 9.00 €</div>
                 <div class="details">Mbi 100 vende • 1 GB – 20 GB</div>
