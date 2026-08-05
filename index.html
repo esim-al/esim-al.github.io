@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eSIM.al – Internet 5G për Udhëtimet e Tua</title>
+    <title>eSIM.al – Internet 5G Global për Udhëtime | eSIM Shqipëri</title>
     <meta name='impact-site-verification' value='76a0c8e0-ba4f-4b40-b0f1-fd6b7a1316b4'>
+    <!-- Font Awesome për ikona profesionale -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,219 +14,538 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f5f7fa;
-            color: #333;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
             line-height: 1.6;
         }
-        header {
-            background: white;
-            padding: 0.8rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-        .logo svg {
-            height: 45px;
-            width: auto;
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-        }
+
+        /* ========== HERO ========== */
         .hero {
-            background: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
+            background: linear-gradient(135deg, #0b3d91 0%, #1e5bb5 50%, #0d6efd 100%);
             color: white;
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 3rem 1.5rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: float 10s infinite alternate ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-2%, 2%); }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-logo {
+            display: block;
+            margin: 0 auto 1.5rem;
+            width: 100%;
+            max-width: 280px;
+            height: auto;
         }
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
         }
         .hero p {
             font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+            opacity: 0.92;
+            max-width: 650px;
+            margin: 0 auto 2rem;
         }
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        .search-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .search-box input {
+            padding: 0.8rem 1.2rem;
+            border-radius: 40px;
+            border: none;
+            width: 100%;
+            max-width: 350px;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .search-box button {
+            background: #ff7b00;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 0.8rem 1.8rem;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .search-box button:hover {
+            background: #e06b00;
+        }
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #0d6efd;
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .btn-white:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* ========== NAVIGATION MINIMALE ========== */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1rem 1.5rem;
+            background: transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+        }
+        .top-nav a {
+            color: white;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        .top-nav a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* ========== SEKSIONET ========== */
+        section {
+            padding: 4rem 0;
         }
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #222;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0b3d91;
         }
+        .section-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ========== SI FUNKSIONON ========== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .step-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #f8faff;
+            border-radius: 16px;
+            transition: 0.2s;
+        }
+        .step-card:hover {
+            background: #eef3ff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .step-icon {
+            font-size: 2.8rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
+        }
+        .step-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ========== PSE NE ========== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+        }
+        .feature-item i {
+            font-size: 2rem;
+            color: #0d6efd;
+            width: 40px;
+            text-align: center;
+        }
+        .feature-item h4 {
+            margin-bottom: 0.3rem;
+        }
+
+        /* ========== PLANET ========== */
         .plans-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem;
         }
         .plan-card {
             background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
             text-align: center;
+            border: 1px solid #f0f0f0;
         }
         .plan-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #d0d8ff;
         }
-        .plan-card .emoji {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+        .plan-flag {
+            font-size: 3.5rem;
+            margin-bottom: 0.8rem;
         }
         .plan-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 0.3rem;
         }
         .plan-card .price {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 2rem;
+            font-weight: 800;
             color: #0d6efd;
-            margin: 0.5rem 0;
+            margin: 0.8rem 0;
         }
         .plan-card .details {
             color: #666;
+            margin-bottom: 1.5rem;
             font-size: 0.9rem;
-            margin-bottom: 1rem;
         }
         .btn {
             display: inline-block;
             background: #0d6efd;
             color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.7rem 1.8rem;
+            border-radius: 40px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.2s;
+            font-weight: 700;
+            transition: 0.2s;
         }
         .btn:hover {
-            background: #0056b3;
+            background: #0a4bb5;
+            transform: scale(1.02);
         }
+
+        /* ========== DESTINACIONET ========== */
+        .destinations-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .dest-item {
+            background: #f5f7ff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #1a1a2e;
+            font-weight: 500;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .dest-item:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        .dest-item span {
+            font-size: 1.3rem;
+        }
+
+        /* ========== FOOTER ========== */
         footer {
-            text-align: center;
-            padding: 2rem;
-            color: #777;
+            background: #0b1930;
+            color: #ccc;
+            padding: 3rem 1.5rem 1.5rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-col ul li a {
+            color: #aaa;
+            text-decoration: none;
             font-size: 0.9rem;
         }
+        .footer-col ul li a:hover {
+            color: white;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2a3a54;
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+        }
+
         @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
-            .hero p { font-size: 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero-logo { max-width: 200px; }
+            .top-nav { justify-content: center; padding: 0.5rem; }
+            .top-nav a { margin: 0 0.8rem; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="/" class="logo">
-            <!-- Logoja SVG e personalizuar (nuk kërkon skedar të jashtëm) -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
-                <!-- Ikona e globit me valë sinjali -->
-                <circle cx="30" cy="30" r="22" stroke="#0d6efd" stroke-width="3.5" fill="none"/>
-                <ellipse cx="30" cy="22" rx="8" ry="14" stroke="#0d6efd" stroke-width="2.5" fill="none"/>
-                <ellipse cx="30" cy="22" rx="16" ry="18" stroke="#0d6efd" stroke-width="2" fill="none" stroke-dasharray="2 2"/>
-                <!-- Valët e sinjalit -->
-                <path d="M56 18 Q60 28 56 38" stroke="#0d6efd" stroke-width="2.5" fill="none"/>
-                <path d="M62 14 Q66 26 62 42" stroke="#0d6efd" stroke-width="2" fill="none"/>
-                <path d="M68 10 Q72 28 68 50" stroke="#0d6efd" stroke-width="1.8" fill="none"/>
-                <!-- Teksti eSIM.al -->
-                <text x="76" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0d6efd">eSIM</text>
-                <text x="138" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333333">.al</text>
-            </svg>
-        </a>
-        <nav>
-            <a href="#plans">Planet</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Internet 5G kudo në botë</h1>
-        <p>Bli eSIM ndërkombëtare për udhëtimet e tua. Shpejt, lirë dhe pa SIM fizike. Aktivizoje në sekonda!</p>
-    </section>
-
-    <div class="container" id="plans">
-        <h2 class="section-title">Planet më të kërkuara</h2>
-        <div class="plans-grid">
-
-            <!-- Plani Europa -->
-            <div class="plan-card">
-                <div class="emoji">🇪🇺</div>
-                <h3>Europa</h3>
-                <div class="price">nga 4.50 €</div>
-                <div class="details">1 GB – 20 GB • 30 ditë • 39 vende</div>
-                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
-            </div>
-
-            <!-- Plani SHBA -->
-            <div class="plan-card">
-                <div class="emoji">🇺🇸</div>
-                <h3>Shtetet e Bashkuara</h3>
-                <div class="price">nga 4.00 €</div>
-                <div class="details">1 GB – 20 GB • 30 ditë</div>
-                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
-            </div>
-
-            <!-- Plani Ballkan -->
-            <div class="plan-card">
-                <div class="emoji">🌍</div>
-                <h3>Ballkani</h3>
-                <div class="price">nga 3.00 €</div>
-                <div class="details">Shqipëri, Kosovë, Maqedoni e Veriut, Mal të Zi...</div>
-                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
-            </div>
-
-            <!-- Plani Turqi -->
-            <div class="plan-card">
-                <div class="emoji">🇹🇷</div>
-                <h3>Turqia</h3>
-                <div class="price">nga 3.50 €</div>
-                <div class="details">1 GB – 10 GB • 30 ditë</div>
-                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
-            </div>
-
-            <!-- Plani Azi -->
-            <div class="plan-card">
-                <div class="emoji">🌏</div>
-                <h3>Azia</h3>
-                <div class="price">nga 5.00 €</div>
-                <div class="details">Japoni, Tajlandë, Indonezi, Vietnam...</div>
-                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
-            </div>
-
-            <!-- Plani Global -->
-            <div class="plan-card">
-                <div class="emoji">🌐</div>
-                <h3>Global</h3>
-                <div class="price">nga 9.00 €</div>
-                <div class="details">Mbi 100 vende • 1 GB – 20 GB</div>
-                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
-            </div>
-
-        </div>
+    <!-- Navigimi minimal në krye -->
+    <div class="top-nav">
+        <a href="#si-funksionon">Si funksionon</a>
+        <a href="#planets">Planet</a>
+        <a href="#destinacione">Destinacione</a>
     </div>
 
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Logoja e madhe SVG -->
+            <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" fill="none">
+                <!-- Rrethi i sfondit -->
+                <circle cx="60" cy="60" r="45" fill="rgba(255,255,255,0.15)" />
+                <!-- Globi -->
+                <circle cx="60" cy="60" r="32" stroke="white" stroke-width="3.5" fill="none"/>
+                <ellipse cx="60" cy="48" rx="12" ry="20" stroke="white" stroke-width="2.5" fill="none"/>
+                <ellipse cx="60" cy="48" rx="24" ry="26" stroke="white" stroke-width="2" fill="none" stroke-dasharray="3 3"/>
+                <!-- Valë sinjali -->
+                <path d="M98 38 Q104 56 98 74" stroke="white" stroke-width="3" fill="none"/>
+                <path d="M106 30 Q112 50 106 82" stroke="white" stroke-width="2.5" fill="none"/>
+                <path d="M114 22 Q120 48 114 94" stroke="white" stroke-width="2" fill="none"/>
+                <!-- Teksti -->
+                <text x="135" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="white">eSIM</text>
+                <text x="230" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#ffd966">.al</text>
+            </svg>
+
+            <h1>Internet 5G Global, në çast</h1>
+            <p>Bli eSIM virtuale për mbi 190 vende. Asnjë kartë fizike, asnjë surprizë në roaming. Aktivizoje në 2 minuta.</p>
+
+            <div class="search-box">
+                <input type="text" placeholder="Kërko destinacionin (p.sh. Itali, SHBA...)">
+                <button onclick="window.open('https://www.airalo.com', '_blank')"><i class="fas fa-search"></i> Kërko</button>
+            </div>
+
+            <a href="#planets" class="btn-white"><i class="fas fa-chevron-down"></i> Shiko planet</a>
+        </div>
+    </section>
+
+    <!-- SI FUNKSIONON -->
+    <section id="si-funksionon" class="container">
+        <h2 class="section-title">Si funksionon?</h2>
+        <p class="section-subtitle">Tre hapa të thjeshtë për të qëndruar i lidhur kudo</p>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-icon"><i class="fas fa-globe-europe"></i></div>
+                <h4>Zgjidh planin</h4>
+                <p>Shfleto planet tona për vendin tënd të destinacionit dhe zgjidh atë që të përshtatet.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon"><i class="fas fa-shopping-cart"></i></div>
+                <h4>Bli online</h4>
+                <p>Paguaj në mënyrë të sigurt dhe merr menjëherë kodin QR në email.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon"><i class="fas fa-qrcode"></i></div>
+                <h4>Aktivizo eSIM</h4>
+                <p>Skano kodin QR, instalo profilin dhe fillo të përdorësh internetin 5G.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PSE eSIM.al? -->
+    <section style="background: #f4f7fc;">
+        <div class="container">
+            <h2 class="section-title">Pse eSIM.al?</h2>
+            <p class="section-subtitle">Zgjidhja më e zgjuar për udhëtarët modernë</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-euro-sign"></i>
+                    <div>
+                        <h4>Çmime të pakrahasueshme</h4>
+                        <p>Kurseni deri në 85% krahasuar me tarifat e roaming-ut tradicional.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Aktivizim i shpejtë</h4>
+                        <p>Bli dhe aktivizoje në pak minuta, pa pritur dërgesë fizike.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <h4>Asistencë 24/7</h4>
+                        <p>Ekipi ynë i mbështetjes është gjithmonë gati të të ndihmojë.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4>Mbulim global</h4>
+                        <p>Rrjete 5G/4G në mbi 190 vende dhe rajone, me partnerë të besuar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANET MË TË KËRKUARA -->
+    <section id="planets" class="container">
+        <h2 class="section-title">Planet më të kërkuara</h2>
+        <p class="section-subtitle">Oferta speciale për destinacionet e preferuara</p>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-flag">🇪🇺</div>
+                <h3>Europa</h3>
+                <div class="price">nga 4.50 €</div>
+                <div class="details"><i class="fas fa-wifi"></i> 1–20 GB<br><i class="far fa-calendar-alt"></i> 30 ditë<br><i class="fas fa-map-marker-alt"></i> 39 vende</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+            <div class="plan-card">
+                <div class="plan-flag">🇺🇸</div>
+                <h3>SHBA</h3>
+                <div class="price">nga 4.00 €</div>
+                <div class="details"><i class="fas fa-wifi"></i> 1–20 GB<br><i class="far fa-calendar-alt"></i> 30 ditë</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+            <div class="plan-card">
+                <div class="plan-flag">🇹🇷</div>
+                <h3>Turqia</h3>
+                <div class="price">nga 3.50 €</div>
+                <div class="details"><i class="fas fa-wifi"></i> 1–10 GB<br><i class="far fa-calendar-alt"></i> 30 ditë</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+            <div class="plan-card">
+                <div class="plan-flag">🌏</div>
+                <h3>Azia</h3>
+                <div class="price">nga 5.00 €</div>
+                <div class="details"><i class="fas fa-wifi"></i> 1–20 GB<br><i class="far fa-calendar-alt"></i> 30 ditë<br>Japoni, Tajlandë etj.</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+            <div class="plan-card">
+                <div class="plan-flag">🌐</div>
+                <h3>Global</h3>
+                <div class="price">nga 9.00 €</div>
+                <div class="details"><i class="fas fa-wifi"></i> 1–20 GB<br><i class="far fa-calendar-alt"></i> 30 ditë<br>100+ vende</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+            <div class="plan-card">
+                <div class="plan-flag">🌍</div>
+                <h3>Ballkani</h3>
+                <div class="price">nga 3.00 €</div>
+                <div class="details"><i class="fas fa-wifi"></i> 1–10 GB<br><i class="far fa-calendar-alt"></i> 30 ditë<br>Shqipëri, Kosovë etj.</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTINACIONE TË NJOHURA -->
+    <section id="destinacione" class="container">
+        <h2 class="section-title">Destinacione të njohura</h2>
+        <p class="section-subtitle">Zgjidhni vendin tuaj dhe gjeni planin perfekt</p>
+        <div class="destinations-grid">
+            <a href="https://www.airalo.com" target="_blank" class="dest-item"><span>🇩🇪</span> Gjermani</a>
+            <a href="https://www.airalo.com" target="_blank" class="dest-item"><span>🇮🇹</span> Itali</a>
+            <a href="https://www.airalo.com" target="_blank" class="dest-item"><span>🇬🇷</span> Greqi</a>
+            <a href="https://www.airalo.com" target="_blank" class="dest-item"><span>🇨🇭</span> Zvicër</a>
+            <a href="https://www.airalo.com" target="_blank" class="dest-item"><span>🇬🇧</span> Britani</a>
+            <a href="https://www.airalo.com" target="_blank" class="dest-item"><span>🇦🇹</span> Austri</a>
+            <a href="https://www.airalo.com" target="_blank" class="dest-item"><span>🇫🇷</span> Francë</a>
+            <a href="https://www.airalo.com" target="_blank" class="dest-item"><span>🇽🇰</span> Kosovë</a>
+            <a href="https://www.airalo.com" target="_blank" class="dest-item"><span>🇦🇱</span> Shqipëri</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 eSIM.al – Të gjitha të drejtat e rezervuara.</p>
-        <p>Partner i Airalo-s. Çmimet mund të ndryshojnë.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>eSIM.al</h4>
+                <p>Partner i autorizuar i Airalo. Ne ofrojmë eSIM për udhëtarët shqiptarë dhe të huaj.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Lidhje të shpejta</h4>
+                <ul>
+                    <li><a href="#si-funksionon">Si funksionon</a></li>
+                    <li><a href="#planets">Planet</a></li>
+                    <li><a href="#destinacione">Destinacione</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Mbështetje</h4>
+                <ul>
+                    <li><a href="mailto:affiliates@airalo.com">Na kontaktoni</a></li>
+                    <li><a href="#">Pyetje të shpeshta</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ndiqni</h4>
+                <div style="font-size:1.5rem; display:flex; gap:1rem;">
+                    <a href="#" style="color:#aaa;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color:#aaa;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color:#aaa;"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 eSIM.al – Të gjitha të drejtat e rezervuara. Faqja përdor lidhje partnere.
+        </div>
     </footer>
 
 </body>
