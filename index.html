@@ -19,7 +19,7 @@
         }
         header {
             background: white;
-            padding: 1rem 2rem;
+            padding: 0.8rem 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             display: flex;
             justify-content: space-between;
@@ -34,25 +34,15 @@
             gap: 0.5rem;
             text-decoration: none;
         }
-        .logo img {
+        .logo svg {
             height: 45px;
-            vertical-align: middle;
-        }
-        .logo .fallback-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #0d6efd;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        .logo .fallback-text span {
-            color: #333;
+            width: auto;
         }
         nav a {
             color: #333;
             text-decoration: none;
             font-weight: 500;
+            font-size: 1rem;
         }
         .hero {
             background: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
@@ -146,12 +136,20 @@
 
     <header>
         <a href="/" class="logo">
-            <!-- Provon të ngarkojë 1211.png; nëse dështon, shfaq tekstin poshtë -->
-            <img src="1211.png" alt="eSIM.al Logo"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
-            <span class="fallback-text" style="display: none;">
-                🌍 eSIM<span>.al</span>
-            </span>
+            <!-- Logoja SVG e personalizuar (nuk kërkon skedar të jashtëm) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+                <!-- Ikona e globit me valë sinjali -->
+                <circle cx="30" cy="30" r="22" stroke="#0d6efd" stroke-width="3.5" fill="none"/>
+                <ellipse cx="30" cy="22" rx="8" ry="14" stroke="#0d6efd" stroke-width="2.5" fill="none"/>
+                <ellipse cx="30" cy="22" rx="16" ry="18" stroke="#0d6efd" stroke-width="2" fill="none" stroke-dasharray="2 2"/>
+                <!-- Valët e sinjalit -->
+                <path d="M56 18 Q60 28 56 38" stroke="#0d6efd" stroke-width="2.5" fill="none"/>
+                <path d="M62 14 Q66 26 62 42" stroke="#0d6efd" stroke-width="2" fill="none"/>
+                <path d="M68 10 Q72 28 68 50" stroke="#0d6efd" stroke-width="1.8" fill="none"/>
+                <!-- Teksti eSIM.al -->
+                <text x="76" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0d6efd">eSIM</text>
+                <text x="138" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333333">.al</text>
+            </svg>
         </a>
         <nav>
             <a href="#plans">Planet</a>
