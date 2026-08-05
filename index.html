@@ -28,9 +28,26 @@
             top: 0;
             z-index: 100;
         }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
         .logo img {
             height: 45px;
             vertical-align: middle;
+        }
+        .logo .fallback-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0d6efd;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .logo .fallback-text span {
+            color: #333;
         }
         nav a {
             color: #333;
@@ -129,7 +146,12 @@
 
     <header>
         <a href="/" class="logo">
-            <img src="logo.png" alt="eSIM.al Logo">
+            <!-- Provon të ngarkojë 1211.png; nëse dështon, shfaq tekstin poshtë -->
+            <img src="1211.png" alt="eSIM.al Logo"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+            <span class="fallback-text" style="display: none;">
+                🌍 eSIM<span>.al</span>
+            </span>
         </a>
         <nav>
             <a href="#plans">Planet</a>
