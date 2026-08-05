@@ -3,41 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eSIM.al – Internet Udhëtimi</title>
+    <title>eSIM.al – Internet 5G për Udhëtimet e Tua</title>
     <meta name='impact-site-verification' value='76a0c8e0-ba4f-4b40-b0f1-fd6b7a1316b4'>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f4f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .card {
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
             background: white;
-            padding: 2rem 3rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        h1 {
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
             color: #0d6efd;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
-        p {
-            color: #444;
-            font-size: 1.1rem;
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #222;
+        }
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .plan-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+        .plan-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .plan-card img {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        .plan-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+        .plan-card .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #0d6efd;
+            margin: 0.5rem 0;
+        }
+        .plan-card .details {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #0d6efd;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>🌍 eSIM.al</h1>
-        <p>Internet 5G për udhëtimet e tua – shpejt, lirë, pa SIM fizike.</p>
-        <p><em>Së shpejti, planet më të mira.</em></p>
+
+    <header>
+        <a href="/" class="logo">🌍 eSIM<span>.al</span></a>
+        <nav>
+            <a href="#plans" style="color:#333; text-decoration:none; font-weight:500;">Planet</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Internet 5G kudo në botë</h1>
+        <p>Bli eSIM ndërkombëtare për udhëtimet e tua. Shpejt, lirë dhe pa SIM fizike. Aktivizoje në sekonda!</p>
+    </section>
+
+    <div class="container" id="plans">
+        <h2 class="section-title">Planet më të kërkuara</h2>
+        <div class="plans-grid">
+
+            <!-- Plani Europa -->
+            <div class="plan-card">
+                <div>🇪🇺</div>
+                <h3>Europa</h3>
+                <div class="price">nga 4.50 €</div>
+                <div class="details">1 GB – 20 GB • 30 ditë • 39 vende</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+
+            <!-- Plani SHBA -->
+            <div class="plan-card">
+                <div>🇺🇸</div>
+                <h3>Shtetet e Bashkuara</h3>
+                <div class="price">nga 4.00 €</div>
+                <div class="details">1 GB – 20 GB • 30 ditë</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+
+            <!-- Plani Ballkan -->
+            <div class="plan-card">
+                <div>🌍</div>
+                <h3>Ballkani</h3>
+                <div class="price">nga 3.00 €</div>
+                <div class="details">Shqipëri, Kosovë, Maqedoni e Veriut, Mal të Zi...</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+
+            <!-- Plani Turqi -->
+            <div class="plan-card">
+                <div>🇹🇷</div>
+                <h3>Turqia</h3>
+                <div class="price">nga 3.50 €</div>
+                <div class="details">1 GB – 10 GB • 30 ditë</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+
+            <!-- Plani Azi -->
+            <div class="plan-card">
+                <div>🌏</div>
+                <h3>Azia</h3>
+                <div class="price">nga 5.00 €</div>
+                <div class="details">Japoni, Tajlandë, Indonezi, Vietnam...</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+
+            <!-- Plani Global -->
+            <div class="plan-card">
+                <div>🌐</div>
+                <h3>Global</h3>
+                <div class="price">nga 9.00 €</div>
+                <div class="details">Mbi 100 vende • 1 GB – 20 GB</div>
+                <a href="https://www.airalo.com" class="btn" target="_blank">Bli Tani</a>
+            </div>
+
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 eSIM.al – Të gjitha të drejtat e rezervuara.</p>
+        <p>Partner i Airalo-s. Çmimet mund të ndryshojnë.</p>
+    </footer>
+
 </body>
 </html>
